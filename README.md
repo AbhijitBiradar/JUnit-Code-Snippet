@@ -1,96 +1,108 @@
 # JUnit
 
-Q: JUnit Assertion
+# JUnit Assertion
 
-#1) assertEquals
+```java
+
+1. **assertEquals**
 String expected = “https://www.google.com”;
 String actualURL= “https://www.google.com”;
 Assert.assertEquals(expected, actualURL);
 
-#2) assertTrue
+```
+
+```java
+
+2. **assertTrue**
 Assert.assertTrue(“Assert True test message”, true);
 
-#3) assertFalse
+```
+
+```java
+
+3. **assertFalse**
 Assert.assertFalse(“Assert false test message” false);
 
-#4) assertNull
+```
+
+```java
+
+4. **assertNull**
 DemoClass demo = new DemoClass();
 Assert.assertNull(demo);
 
-#5) assertNotNull
+```
+
+```java
+5. **assertNotNull**
 DemoClass demo = new DemoClass();
 Assert.assertNotNull(demo);
 
-#6) assertSame
+```
+
+```java
+6. **assertSame**
 DemoClass1 demo1 = new DemoClass1();
 DemoClass2 demo2= new DemoClass2();
 Assert.assertSame(“Two objects are equal”, demo1, demo2);
 
-#7) assertNotSame
+```
+
+```java
+7. **assertNotSame**
 DemoClass1 demo1 = new DemoClass1();
 DemoClass2 demo2= new DemoClass2();
 Assert.assertNotSame(“Two objects are not equal”, demo1, demo2);
 
-#8) assertArrayEquals
+```
+
+```java
+8. **assertArrayEquals**
 String[] expected = {“Mango”,”Apple”,”Banana”}
 String[] actual = {“ Mango”,”Apple”,”Banana”}
 Assert.assertArrayEquals(expected,actual);
 
+```
 
+# Sample JUnit Test
 
+```java 
 
-
-
-
-
-Sample JUnit Test
 public class Example {
 	@BeforeClass
 	public static void setup() {
+	
 	}
 
 	@Before
 	public void setupThis() {
+	
 	}
 
 	@Test
 	public void method() {
-	org.junit.Assert.assertTrue(new ArrayList().isEmpty());
+		Assert.assertTrue(new ArrayList().isEmpty());
 	}
 
 	@After
 	public void tearThis() {
+	
 	}
 
 	@AfterClass
 	public static void tear() {
+	
 	}
 }
 
+```
 
-Assert Class
 
-void assertEquals(boolean expected, boolean actual)
-	Checks that two primitives/objects are equal.
-
-void assertFalse(boolean condition)
-	Checks that a condition is false.
-
-void assertNotNull(Object object)
-	Checks that an object isn't null.
-
-void assertNull(Object object)
-	Checks that an object is null.
-
-void assertTrue(boolean condition)
-	Checks that a condition is true.
-	
-void fail()
-	Fails a test with no message.
 	
 	
-	
-Annotation
+# JUnit Annotation
+
+```java 
 
 @Test
 	The Test annotation tells JUnit that the public void method to which it is attached can be run as a test case.
@@ -111,23 +123,37 @@ Annotation
 	The Ignore annotation is used to ignore the test and that test will not be executed.
 
 
-JUnit Annotation Execution Flow
-in before class
-in before
-in test case 1
-in after
-in before
-in test case 2
-in after
-in after class
+```
+
+# JUnit Annotation Execution Flow
+
+```java
+
+@BeforeClass
+	@Before
+		@Test
+	@After
+	@Before
+		@Test
+	@After
+@AfterClass
+
+```
 
 
-JUnit Annotation Parameter
+# JUnit Annotation Parameter
+
+```java
+
 @Test(timeout = 1000)
 @Test(expected = ArithmeticException.class)
 
+```
 
-Test Suites
+
+# Test Suites
+ 
+ ```java 
  
 @RunWith(Suite.class)
  
@@ -139,9 +165,12 @@ Test Suites
 public class JunitTestSuite {   
 }  
 
+```
 
-Sample JUnit Test Runner
 
+# Sample JUnit Test Runner
+
+```java 
 public class TestRunner {
 
 	public static void main(String[] args) {
@@ -166,5 +195,6 @@ public class TestRunner {
 
 }
 
+```
 
 Parameterize Test---Pending	
